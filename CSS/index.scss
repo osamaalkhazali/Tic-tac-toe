@@ -2,3 +2,34 @@
   margin: 0;
   padding: 0;
 }
+
+.game {
+  border: 5px solid teal;
+  width: 600px;
+  height: 600px;
+  margin: 50px auto;
+  display: grid;
+  background-color: teal;
+  overflow: hidden;
+  grid-template-columns: 198px 198px 198px;
+  grid-template-rows:198px 198px 198px ;
+  gap: 3px;
+  padding: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  
+  
+  .square {
+  background-color: white;
+  text-align: center;
+  color: orange;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+}
