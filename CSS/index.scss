@@ -1,35 +1,226 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.game {
-  border: 5px solid teal;
-  width: 600px;
-  height: 600px;
-  margin: 50px auto;
-  display: grid;
-  background-color: teal;
-  overflow: hidden;
-  grid-template-columns: 198px 198px 198px;
-  grid-template-rows:198px 198px 198px ;
-  gap: 3px;
-  padding: 10px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
-  
-  
-  .square {
-  background-color: white;
-  text-align: center;
-  color: orange;
-  font-size: 100px;
+.gameBox {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 100px auto;
+  text-align: center;
   justify-content: center;
+  align-items: center;
+
+  
+  h1 {
+    background-color: orange;
+    margin: auto;
+    padding: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+  }
+  
+  .game {
+    border: 5px solid teal;
+    width: 100%;
+    height: 500px;
+    margin: 20px auto;
+    display: grid;
+    background-color: teal;
+    overflow: hidden;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr) ;
+    gap: 3px;
+    padding: 10px;
+    position: relative;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    
+    .square {
+    background-color: white;
+    text-align: center;
+    color: orange;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    }
+    
+    .start {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 200px;
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      
+      .startButton {
+        width: 200px;
+      }
+      h3 {
+        width: 300px;
+        color: white;
+      }
+    
+  }
+  .end {
+    position: absolute;
+    display: none;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    padding: 200px;
+    background-color: transparent;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    }
+    
+    .line {
+      width: 0px;
+      height: 10px;
+      position: absolute;
+      background-color: teal;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      border-radius: 20px;
+      -webkit-transition: width 600ms ease;
+      -moz-transition: width 600ms ease;
+      -ms-transition: width 600ms ease;
+      -o-transition: width 600ms ease;
+      transition: width 600ms ease;
+      
+      &.odd1 {
+        width: 400px;
+        top: 15%;
+        left: 45px;
+      }
+      &.odd2 {
+        width: 400px;
+        top: 50%;
+        left: 45px;
+        -webkit-transform: translate(0,-50%);
+        -moz-transform: translate(0,-50%);
+        -ms-transform: translate(0,-50%);
+        -o-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+      }
+      &.odd3 {
+        width: 400px;
+        top: 80%;
+        left: 45px;
+      }
+      &.odd4 {
+        width: 400px;
+        top: 40px;
+        left: 17.5%;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        transform-origin: 0;
+      }
+      &.odd5 {
+        width: 400px;
+        top: 40px;
+        left: 50%;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        transform-origin: 0;
+      }
+      &.odd6 {
+        width: 400px;
+        top: 40px;
+        left: 82.5%;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        transform-origin: 0;
+      }
+      &.odd7 {
+        width: 450px;
+        top: 15%;
+        left: 17.5%;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transform-origin: 0;
+      }
+      &.odd8 {
+        width: 450px;
+        top: 15%;
+        left: 82.5%;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+        transform-origin: 0;
+      }
+}
+  
+  }
+  
+  .resultBox {
+    display: none;
+    font-weight: 900;
+    font-size: 25px;
+  }
+  
+  .gameBoard {
+    display: none;
+    width: 50%;
+    margin: 20px auto;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: orange;
+    padding: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    
+    .player {
+      border: 2px solid teal;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      border-radius: 20px;
+}
+    
   }
   
 }
